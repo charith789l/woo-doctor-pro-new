@@ -212,7 +212,7 @@ const Landing = () => {
           >
             <div className="rounded-xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800">
               <img 
-                src="https://placehold.co/1200x600/fef/fdf?text=WooDoctor+Dashboard" 
+                src="/images/dasbord.png" 
                 alt="WooDoctor Dashboard" 
                 className="w-full h-auto"
               />
