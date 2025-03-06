@@ -1,0 +1,258 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+ 
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+ 
+    --primary: 340 82% 52%;
+    --primary-foreground: 210 40% 98%;
+ 
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+ 
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+ 
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+ 
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+ 
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 222.2 20% 10%;
+    --foreground: 210 40% 98%;
+ 
+    --card: 222.2 25% 12%;
+    --card-foreground: 210 40% 98%;
+ 
+    --popover: 222.2 25% 12%;
+    --popover-foreground: 210 40% 98%;
+ 
+    --primary: 340 82% 52%;
+    --primary-foreground: 0 0% 100%;
+ 
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 75.1%;
+ 
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --border: 217.2 32.6% 25.5%;
+    --input: 217.2 32.6% 25.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Add new styles for sidebar transitions */
+.sidebar-transition {
+  transition: all 0.3s ease;
+}
+
+/* Dark mode styles for form elements */
+.dark .form-label {
+  @apply text-gray-200;
+}
+
+.dark .form-input {
+  @apply bg-gray-800 border-gray-700 text-white;
+}
+
+/* Improved button styles for both light and dark mode */
+.btn-primary {
+  @apply bg-primary text-white hover:bg-primary/90 dark:hover:bg-primary/80;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-gray-600;
+}
+
+/* Fix for dark mode text visibility in coming soon pages */
+.dark .text-gray-600,
+.dark .text-gray-800,
+.dark .text-muted-foreground {
+  @apply text-gray-300;
+}
+
+/* Fix for dark mode card title visibility */
+.dark .card-title,
+.dark h3.text-2xl,
+.dark h1.text-2xl,
+.dark h2.text-2xl,
+.dark .product-title,
+.dark .text-gray-800,
+.dark h3.text-lg {
+  @apply text-white;
+}
+
+/* Fix for dark mode table text and borders */
+.dark table {
+  @apply text-gray-200;
+}
+
+.dark table tbody tr {
+  @apply border-gray-700;
+}
+
+.dark table thead tr {
+  @apply bg-gray-800 text-gray-200;
+}
+
+/* Fix for dark mode inputs */
+.dark input:not([type="checkbox"]):not([type="radio"]),
+.dark textarea,
+.dark select {
+  @apply bg-gray-800 border-gray-700 text-white placeholder:text-gray-500;
+}
+
+.dark input:disabled,
+.dark textarea:disabled,
+.dark select:disabled {
+  @apply bg-gray-900 text-gray-400;
+}
+
+/* Fix for disabled elements in dark mode */
+.dark .bg-gray-50 {
+  @apply bg-gray-800 text-gray-300;
+}
+
+/* Fix for profile sections */
+.dark .bg-green-50 {
+  @apply bg-green-900 text-green-100 border-green-800;
+}
+
+/* Fix for coming soon pages */
+.dark .card-header .card-title {
+  @apply text-white;
+}
+
+/* Fix for product cards and list item titles */
+.dark .product-card h3,
+.dark .product-item h3 {
+  @apply text-white;
+}
+
+/* General fixes for text in dark mode */
+.dark p {
+  @apply text-gray-300;
+}
+
+.dark label {
+  @apply text-gray-200;
+}
+
+.dark .locked-section,
+.dark .email-section {
+  @apply text-white bg-gray-800 border-gray-700;
+}
+
+/* New styles for product cards in dark mode */
+.dark .card {
+  @apply bg-gray-800 border-gray-700;
+}
+
+.dark .card-description {
+  @apply text-gray-300;
+}
+
+.dark .card-content {
+  @apply text-gray-300;
+}
+
+/* Product grid card background in dark mode */
+.dark .grid .card {
+  @apply bg-gray-800 border-gray-700 shadow-lg;
+}
+
+/* Product card description fixes for dark mode */
+.dark .card .text-gray-500,
+.dark .card .text-muted-foreground {
+  @apply text-gray-300;
+}
+
+/* Card backgrounds for hover states in dark mode */
+.dark .card:hover {
+  @apply bg-gray-750 border-gray-600;
+}
+
+/* Avatar styles for dark mode */
+.dark .avatar-fallback {
+  @apply bg-gray-800 text-gray-200;
+}
+
+.dark .user-welcome {
+  @apply text-white;
+}
+
+.dark .user-email {
+  @apply text-gray-300;
+}
+
+/* Header improvements for dark mode */
+.dark .header-welcome {
+  @apply text-gray-200;
+}
+
+/* Avatar component should have good contrast in both modes */
+.avatar-container {
+  @apply ring-2 ring-white/10 dark:ring-gray-700/50;
+}
+
+/* Ensure profile section has proper colors in dark mode */
+.dark .profile-section {
+  @apply bg-gray-800 border-gray-700;
+}
+
+.dark .profile-section h2,
+.dark .profile-section h3 {
+  @apply text-white;
+}
+
+/* Email in profile header should be visible */
+.dark .profile-email {
+  @apply text-gray-300;
+}
